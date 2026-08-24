@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>株式会社S,tec. | 暮らしと未来を、もっとスマートに。</title>
+
+<meta name="description" content="株式会社S,tec. 公式ホームページ">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+  color:#111;
+  background:#fff;
+  line-height:1.8;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.45),
+      rgba(0,0,0,.18)
+    ),
+    radial-gradient(circle at 75% 35%, #555 0%, #202020 35%, #080808 75%);
+  color:#fff;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:-220px;
+  bottom:-220px;
+}
+
+header{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 6%;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.logo span{
+  font-weight:300;
+}
+
+nav{
+  display:flex;
+  gap:35px;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+nav a{
+  opacity:.85;
+  transition:.3s;
+}
+
+nav a:hover{
+  opacity:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:0 8% 10%;
+  max-width:900px;
+}
+
+.hero-small{
+  font-size:13px;
+  letter-spacing:4px;
+  color:#bbb;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(42px,7vw,88px);
+  line-height:1.08;
+  letter-spacing:3px;
+  font-weight:700;
+  margin-bottom:30px;
+}
+
+.hero-copy{
+  font-size:16px;
+  color:#ddd;
+  max-width:600px;
+  margin-bottom:40px;
+}
+
+.btn{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.6);
+  padding:14px 30px;
+  font-size:13px;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#fff;
+  color:#111;
+}
+
+.scroll{
+  position:absolute;
+  right:5%;
+  bottom:35px;
+  writing-mode:vertical-rl;
+  font-size:10px;
+  letter-spacing:3px;
+  color:#aaa;
+}
+
+section{
+  padding:110px 8%;
+}
+
+.section-label{
+  font-size:11px;
+  letter-spacing:4px;
+  color:#888;
+  margin-bottom:12px;
+}
+
+.section-title{
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:25px;
+  letter-spacing:1px;
+}
+
+.about{
+  background:#fff;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:80px;
+  align-items:start;
+}
+
+.about-text{
+  color:#555;
+  font-size:15px;
+  max-width:700px;
+}
+
+.number{
+  font-size:90px;
+  color:#eee;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:-35px;
+}
+
+.services{
+  background:#f5f5f3;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:60px;
+}
+
+.service-card{
+  background:#fff;
+  padding:45px 35px;
+  min-height:270px;
+  transition:.3s;
+  border:1px solid #eee;
+}
+
+.service-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.service-number{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#999;
+  margin-bottom:50px;
+}
+
+.service-card h3{
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.service-card p{
+  font-size:13px;
+  color:#666;
+}
+
+.message{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:130px 8%;
+}
+
+.message h2{
+  font-size:clamp(30px,5vw,60px);
+  line-height:1.3;
+  margin-bottom:25px;
+}
+
+.message p{
+  color:#aaa;
+  max-width:650px;
+  margin:0 auto;
+}
+
+.company{
+  background:#fff;
+}
+
+.company-table{
+  max-width:850px;
+  margin-top:50px;
+  border-top:1px solid #ddd;
+}
+
+.company-row{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  padding:22px 0;
+  border-bottom:1px solid #ddd;
+  font-size:14px;
+}
+
+.company-row .label{
+  color:#888;
+}
+
+.contact{
+  background:#f5f5f3;
+  text-align:center;
+}
+
+.contact h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.contact p{
+  color:#666;
+  margin-bottom:35px;
+}
+
+.contact-btn{
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:18px 50px;
+  letter-spacing:2px;
+  font-size:13px;
+  transition:.3s;
+}
+
+.contact-btn:hover{
+  background:#333;
+}
+
+footer{
+  background:#080808;
+  color:#fff;
+  padding:35px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+footer small{
+  color:#777;
+  font-size:11px;
+}
+
+@media(max-width:800px){
+
+  header{
+    padding:25px 6%;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .hero-content{
+    padding:0 7% 18%;
+  }
+
+  section{
+    padding:80px 7%;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+    margin-top:40px;
+  }
+
+  .service-card{
+    min-height:auto;
+  }
+
+  .contact h2{
+    font-size:38px;
+  }
+
+  .company-row{
+    grid-template-columns:110px 1fr;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<header>
+  <div class="logo">S<span>,tec.</span></div>
+
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#service">SERVICE</a>
+    <a href="#company">COMPANY</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<div class="hero-content">
+
+  <div class="hero-small">
+    S,TEC. INC.
+  </div>
+
+  <h1>
+    CREATE<br>
+    THE NEXT.
+  </h1>
+
+  <p class="hero-copy">
+    株式会社S,tec.<br>
+    暮らしとビジネスの可能性を広げ、
+    新しい価値を創造する。
+  </p>
+
+  <a href="#service" class="btn">
+    OUR SERVICE →
+  </a>
+
+</div>
+
+<div class="scroll">
+  SCROLL DOWN
+</div>
+
+</div>
+
+
+<section class="about" id="about">
+
+  <div class="about-grid">
+
+    <div>
+      <div class="number">01</div>
+      <div class="section-label">ABOUT S,TEC.</div>
+      <h2 class="section-title">
+        未来を、<br>
+        もっと自由に。
+      </h2>
+    </div>
+
+    <div class="about-text">
+      <p>
+        株式会社S,tec.は、
+        お客様の想いやアイデアをカタチにし、
+        新しい価値を生み出していく会社です。
+      </p>
+
+      <br>
+
+      <p>
+        私たちは一つひとつの仕事に向き合い、
+        「頼んでよかった」と思っていただける
+        サービスを目指しています。
+      </p>
+
+      <br>
+
+      <p>
+        常識にとらわれず、
+        時代に合わせて柔軟に変化する。
+        それがS,tec.のスタイルです。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services" id="service">
+
+  <div class="section-label">OUR SERVICE</div>
+
+  <h2 class="section-title">
+    事業内容
+  </h2>
+
+  <p class="about-text">
+    S,tec.が提供するサービス。
+  </p>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <div class="service-number">SERVICE 01</div>
+      <h3>BUSINESS</h3>
+      <p>
+        お客様のニーズに合わせた
+        幅広いサービスをご提案します。
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-number">SERVICE 02</div>
+      <h3>PROJECT</h3>
+      <p>
+        新しいアイデアをカタチにし、
+        プロジェクトを成功へ導きます。
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-number">SERVICE 03</div>
+      <h3>SUPPORT</h3>
+      <p>
+        ご相談からアフターフォローまで、
+        長くお付き合いいただける体制を整えます。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="message">
+
+  <div class="section-label">OUR PHILOSOPHY</div>
+
+  <h2>
+    「できる」を、<br>
+    もっと増やす。
+  </h2>
+
+  <p>
+    変化する時代の中で、
+    新しい可能性を見つけ、
+    一歩先の価値を提供する。
+  </p>
+
+</section>
+
+
+<section class="company" id="company">
+
+  <div class="section-label">COMPANY</div>
+
+  <h2 class="section-title">
+    会社概要
+  </h2>
+
+  <div class="company-table">
+
+    <div class="company-row">
+      <div class="label">会社名</div>
+      <div>株式会社S,tec.</div>
+    </div>
+
+    <div class="company-row">
+      <div class="label">代表</div>
+      <div>代表者名</div>
+    </div>
+
+    <div class="company-row">
+      <div class="label">所在地</div>
+      <div>〒000-0000<br>所在地を入力してください</div>
+    </div>
+
+    <div class="company-row">
+      <div class="label">事業内容</div>
+      <div>事業内容を入力してください</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="section-label">CONTACT</div>
+
+  <h2>Let's talk.</h2>
+
+  <p>
+    お仕事のご相談・お問い合わせはこちらから。
+  </p>
+
+  <a href="mailto:info@example.com" class="contact-btn">
+    CONTACT US →
+  </a>
+
+</section>
+
+
+<footer>
+  <div class="logo">S<span>,tec.</span></div>
+  <small>© 2026 S,tec. Inc. All Rights Reserved.</small>
+</footer>
+
+</body>
+</html>
