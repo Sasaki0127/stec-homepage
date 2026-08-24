@@ -442,8 +442,29 @@ footer small{
     grid-template-columns:1fr;
     gap:5px;
   }
+}.service-card{
+  position:relative;
+  transition:transform .3s ease, box-shadow .3s ease;
 }
-</style>
+
+.service-card::after{
+  content:"→";
+  position:absolute;
+  right:24px;
+  bottom:20px;
+  font-size:22px;
+  color:#162b4d;
+  transition:transform .3s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px rgba(22,43,77,.12);
+}
+
+.service-card:hover::after{
+  transform:translateX(6px);
+}</style>
 </head>
 
 <body>
