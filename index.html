@@ -378,10 +378,13 @@ footer small{
 }
 
 nav{
-  width:auto;
-  display:grid;
-  grid-template-columns:repeat(4,auto);
-  gap:8px;
+  width:100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:0;
 }
 
 nav a{
